@@ -10,6 +10,7 @@
 #include "destroyer.h"
 #inclide "ZoneType.h"
 
+#include <string>
 #include <vector>
 
 namespace dependency
