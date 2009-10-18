@@ -13,6 +13,7 @@ class ZoneType
 {
 public:
 	virtual ~ZoneType() {}
+
 protected:
 	ZoneType() {}
 };
