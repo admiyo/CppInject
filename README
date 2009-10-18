@@ -1,0 +1,7 @@
+CppInject
+---------
+CppInject is a framework/library for dependency injection in C++. It is based on cpp-resolver by Adam Young (http://adam.younglogic.com).
+
+Goals
+ * Does not require a XML file for wiring
+ * Simple to use
