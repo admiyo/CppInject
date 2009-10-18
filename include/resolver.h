@@ -13,43 +13,10 @@
 #include "ZoneType.h"
 #include "GlobalZoneType.h"
 #include "ConcreteZoneType.h"
+#include "Zone.h"
 
 namespace dependency
 {
-  /*
-    A Hierarchical zone of control.
-  */
-  class Zone{
-    std::vector<destroyer*> destroyers;
-  public:
-
-    const ZoneType * zoneType ;
-    Zone* parent_;
-  Zone(const ZoneType* type):zoneType(type){parent_ = 0;};
-  Zone(Zone * parent,const ZoneType* type):zoneType(type){parent_ = parent;};
-    virtual ~Zone(){
-      for (std::vector<destroyer*>::iterator itr = destroyers.begin();
- 	   itr != destroyers.end();++itr){
-	destroyer*  destroy = *itr;
-	(*destroy)();
-	delete destroy;
-      }
-    };
-
-    virtual  bool operator == (Zone& other){
-      return this->zoneType == other.zoneType;
-    }
-
-    operator const std::string (){
-      return std::string("");
-    }
-
-    void push_destroyer(destroyer* d){
-      destroyers.push_back(d);
-    }
-  };
-
-
   template <class T>
     T* default_factory(Zone& f){
     return new T;
