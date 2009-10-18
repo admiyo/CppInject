@@ -12,6 +12,8 @@
 #include "ZoneType.h"
 
 #include <string>
+#include <map>
+#include <stdexcept>
 
 namespace dependency
 {
@@ -146,7 +148,33 @@ public:
 		object_map.erase(zone);
 	}
 };
-  
+
+template<typename T, int Which>
+std::map< const ZoneType *, activator<T> > supply<T,Which>::activator_map;
+
+template<typename T, int Which>
+std::map< Zone*, T* > supply<T,Which>::object_map;
+
+#define REGISTER(CLASS)					\
+  bool register##CLASS(){				\
+    supply<CLASS>::configure();				\
+    return true;					\
+  }							\
+  static bool __registered##CLASS = register##CLASS()
+
+#define REGISTER_FACTORY(CLASS,FACTORY)			\
+  bool register##CLASS(){				\
+    supply<CLASS>::configure(FACTORY);			\
+    return true;					\
+  }							\
+  static bool __registered##CLASS = register##CLASS()
+
+#define REGISTER_FACTORY_CLEANER(CLASS,FACTORY,CLEANER)	\
+  bool register##CLASS(){				\
+    supply<CLASS>::configure(FACTORY,CLEANER);		\
+    return true;					\
+  }							\
+  static bool __registered##CLASS = register##CLASS()
 }
 
 #endif
