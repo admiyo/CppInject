@@ -12,7 +12,7 @@ namespace dependency
 class ZoneType
 {
 public:
-	virtual ~ZoneType();
+	virtual ~ZoneType() {}
 protected:
 	ZoneType() {}
 };

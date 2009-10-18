@@ -8,7 +8,7 @@
 
 // TODO: move to .cpp and use forward declaration
 #include "destroyer.h"
-#inclide "ZoneType.h"
+#include "ZoneType.h"
 
 #include <string>
 #include <vector>

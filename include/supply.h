@@ -104,9 +104,9 @@ public:
 
 			if (0 == act.factory_)
 			{
-				if (zone.parent_)
+				if (zone._parent)
 				{
-					return fetch(*zone.parent_);
+					return fetch(*zone._parent);
 				}
 				else
 				{
@@ -135,9 +135,9 @@ public:
 		T * val = object_map[zone];
 		if (!val)
 		{
-			if (zone->parent_)
+			if (zone->_parent)
 			{
-				release(zone->parent_);
+				release(zone->_parent);
 			}
 	
 			//We may want to put an assert failure here.
