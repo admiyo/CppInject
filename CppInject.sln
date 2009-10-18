@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppInject", "CppInject.vcproj", "{170E5F68-48F7-47AC-BA19-D321C55BDC59}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BasicSample", "examples\BasicSample\BasicSample.vcproj", "{F110B779-9630-4D1C-9CF2-66DF6ED728FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +15,10 @@ Global
 		{170E5F68-48F7-47AC-BA19-D321C55BDC59}.Debug|Win32.Build.0 = Debug|Win32
 		{170E5F68-48F7-47AC-BA19-D321C55BDC59}.Release|Win32.ActiveCfg = Release|Win32
 		{170E5F68-48F7-47AC-BA19-D321C55BDC59}.Release|Win32.Build.0 = Release|Win32
+		{F110B779-9630-4D1C-9CF2-66DF6ED728FE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F110B779-9630-4D1C-9CF2-66DF6ED728FE}.Debug|Win32.Build.0 = Debug|Win32
+		{F110B779-9630-4D1C-9CF2-66DF6ED728FE}.Release|Win32.ActiveCfg = Release|Win32
+		{F110B779-9630-4D1C-9CF2-66DF6ED728FE}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

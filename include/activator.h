@@ -28,8 +28,8 @@ template <class T>
 class activator
 {
 public:
-	typedef T* (*factory)(Zone& f) ;
-	typedef void (*cleanup)(T*) ;
+	typedef T* (*factoryFunction)(Zone& f) ;
+	typedef void (*cleanupFunction)(T*) ;
 
 	activator()
 	{
@@ -43,7 +43,7 @@ public:
 		cleanup_ = other.cleanup_;
 	}
 
-	activator(factory f, cleanup c)
+	activator(factoryFunction f, cleanupFunction c)
 	  : factory_(f), cleanup_(c)
 	{
 	}
@@ -52,8 +52,19 @@ public:
 	  : factory_(a.factory_), cleanup_(a.cleanup_)
 	{}
 
-	factory factory_;
-	cleanup cleanup_;
+	factoryFunction factory() const
+	{
+		return factory_;
+	}
+
+	cleanupFunction cleanup() const
+	{
+		return cleanup_;
+	}
+
+private:
+	factoryFunction factory_;
+	cleanupFunction cleanup_;
 };
 	
 }

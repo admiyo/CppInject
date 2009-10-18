@@ -102,7 +102,7 @@ public:
 		{
 			activator<T> act = activator_map[zone.zoneType];
 
-			if (0 == act.factory_)
+			if (0 == act.factory())
 			{
 				if (zone._parent)
 				{
@@ -119,7 +119,7 @@ public:
 			
 			//This needs a lock in order to be thread safe.
 			{
-			  val = (*act.factory_)(zone);
+			  val = (*act.factory())(zone);
 			  object_map[&zone] = val;
 
 			  destroyer* d = new TDestroyer(&zone);
@@ -144,7 +144,7 @@ public:
 			return;
 		}
 		
-		(activator_map[zone->zoneType].cleanup_)(object_map[zone]);
+		(activator_map[zone->zoneType].cleanup())(object_map[zone]);
 		object_map.erase(zone);
 	}
 };
