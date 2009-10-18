@@ -8,44 +8,14 @@
 
 #include <typeinfo>
 #include <iostream>
-#include <stdexcept>
 
+#include "destroyer.h"
+#include "ZoneType.h"
+#include "GlobalZoneType.h"
+#include "ConcreteZoneType.h"
 
-
-namespace dependency{
-
-  /*callback to free an object at a given scope.*/
-  class destroyer{
-  public:
-    destroyer(){};
-    virtual ~destroyer(){};
-    virtual void operator()() = 0;
-  };
-
-
-  class ZoneType{
-  protected:    
-    ZoneType()
-      {
-      };
-  };
-
-  class GlobalZoneType: public ZoneType {
-    GlobalZoneType(){
-    };
-  public:
-    const static GlobalZoneType instance;
-  };
-  
-  template <class T>
-    class ConcreteZoneType: public ZoneType{
-  public:
-    ConcreteZoneType<T>(){
-    };
-    const static ConcreteZoneType<T> instance;
-  };
-
-
+namespace dependency
+{
   /*
     A Hierarchical zone of control.
   */
