@@ -21,5 +21,7 @@ public:
 	const static ConcreteZoneType<T> instance;
 };
 
+template<class T> const ConcreteZoneType<T> ConcreteZoneType<T>::instance;
+
 }
 #endif

@@ -19,9 +19,6 @@
 
 namespace dependency
 {
-  template<class T> const ConcreteZoneType<T> 
-    ConcreteZoneType<T>::instance;
-
   template < typename T, int Which >
     std::map < const ZoneType *,  activator<T> > 
     supply<T,Which>::activator_map;
