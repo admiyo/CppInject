@@ -32,39 +32,38 @@ public:
 	typedef void (*cleanupFunction)(T*) ;
 
 	activator()
+	  : mFactory(0), mCleanup(0)
 	{
-		factory_ = 0;
-		cleanup_ = 0;
 	}
 
 	void operator=(const activator& other)
 	{
-		factory_ = other.factory_;
-		cleanup_ = other.cleanup_;
+		mFactory = other.mFactory;
+		mCleanup = other.mCleanup;
 	}
 
 	activator(factoryFunction f, cleanupFunction c)
-	  : factory_(f), cleanup_(c)
+	  : mFactory(f), mCleanup(c)
 	{
 	}
 
 	activator(const activator& a)
-	  : factory_(a.factory_), cleanup_(a.cleanup_)
+	  : mFactory(a.mFactory), mCleanup(a.mCleanup)
 	{}
 
 	factoryFunction factory() const
 	{
-		return factory_;
+		return mFactory;
 	}
 
 	cleanupFunction cleanup() const
 	{
-		return cleanup_;
+		return mCleanup;
 	}
 
 private:
-	factoryFunction factory_;
-	cleanupFunction cleanup_;
+	factoryFunction mFactory;
+	cleanupFunction mCleanup;
 };
 	
 }
