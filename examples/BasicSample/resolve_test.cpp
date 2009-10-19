@@ -24,28 +24,39 @@
     a->activity();
     b->dothing();
 
-    a = supply<A>::fetch(request2);
-    b = supply<B>::fetch(request1);
-    a->activity();
-    b->dothing();
+	cout << "----------------" << endl;
 
     a = supply<A>::fetch(request2);
     b = supply<B>::fetch(request1);
     a->activity();
     b->dothing();
+
+	cout << "----------------" << endl;
+
+    a = supply<A>::fetch(request2);
+    b = supply<B>::fetch(request1);
+    a->activity();
+    b->dothing();
+
+	cout << "----------------" << endl;
 
     a = supply<A,1>::fetch(request1);
     b = supply<B,1>::fetch(request2);
     a->activity();
     b->dothing();
 
+	cout << "----------------" << endl;
+
     a = supply<A,1>::fetch(request2);
     b = supply<B,1>::fetch(request1);
     a->activity();
     b->dothing();
 
+	cout << "----------------" << endl;
+
     C* c = supply<C>::fetch(request1);
     c->action();
+
     try{
        c = supply<C,3>::fetch(request1);
     }catch(logic_error le){
