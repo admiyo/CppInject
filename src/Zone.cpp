@@ -12,15 +12,13 @@ namespace dependency
 {
 
 Zone::Zone(const ZoneType* type)
- : zoneType(type)
+ : mZoneType(type), mParent(0)
 {
-	_parent = 0;
 }
 
 Zone::Zone(Zone * parent, const ZoneType* type)
- : zoneType(type)
+ : mParent(parent), mZoneType(type)
 {
-	_parent = parent;
 }
 
 Zone::~Zone()
@@ -35,12 +33,22 @@ Zone::~Zone()
 
 bool Zone::operator==(const Zone &other)
 {
-	return this->zoneType == other.zoneType;
+	return mZoneType == other.mZoneType;
 }
 
 void Zone::push_destroyer(destroyer* d)
 {
 	destroyers.push_back(d);
+}
+
+Zone *Zone::parent() const
+{
+	return mParent;
+}
+
+const ZoneType *Zone::zoneType() const
+{
+	return mZoneType;
 }
 
 }

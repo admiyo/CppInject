@@ -20,10 +20,8 @@ class destroyer;
 class Zone
 {
  public:
-	const ZoneType * zoneType ;
-	Zone* _parent;
-	
 	Zone(const ZoneType* type);
+	// TODO: Reorder parameters
 	Zone(Zone * parent, const ZoneType* type);
 	
 	virtual ~Zone();
@@ -32,8 +30,14 @@ class Zone
 
 	void push_destroyer(destroyer* d);
 
+	Zone *parent() const;
+
+	const ZoneType *zoneType() const;
+
 private:
 	std::vector<destroyer*> destroyers;
+	Zone* mParent;
+	const ZoneType *mZoneType;
 };
 
 }

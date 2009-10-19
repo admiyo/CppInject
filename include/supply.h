@@ -100,13 +100,13 @@ public:
 		
 		if (!val)
 		{
-			activator<T> act = activator_map[zone.zoneType];
+			activator<T> act = activator_map[zone.zoneType()];
 
 			if (0 == act.factory())
 			{
-				if (zone._parent)
+				if (zone.parent())
 				{
-					return fetch(*zone._parent);
+					return fetch(*zone.parent());
 				}
 				else
 				{
@@ -135,16 +135,16 @@ public:
 		T * val = object_map[zone];
 		if (!val)
 		{
-			if (zone->_parent)
+			if (zone->parent())
 			{
-				release(zone->_parent);
+				release(zone->parent());
 			}
 	
 			//We may want to put an assert failure here.
 			return;
 		}
 		
-		(activator_map[zone->zoneType].cleanup())(object_map[zone]);
+		(activator_map[zone->zoneType()].cleanup())(object_map[zone]);
 		object_map.erase(zone);
 	}
 };
