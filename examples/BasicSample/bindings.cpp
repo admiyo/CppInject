@@ -1,4 +1,4 @@
-#include "resolver.h"
+#include <CppInject.h>
 #include "sample_classes.h"
 
 using namespace CppInject;

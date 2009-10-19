@@ -185,10 +185,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\resolver.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\sample_classes.cpp"
 				>
 			</File>

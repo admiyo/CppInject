@@ -152,6 +152,10 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\src\GlobalZoneType.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\src\Zone.cpp"
 				>
 			</File>
@@ -170,15 +174,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\include\CppInject.h"
+				>
+			</File>
+			<File
 				RelativePath=".\include\destroyer.h"
 				>
 			</File>
 			<File
 				RelativePath=".\include\GlobalZoneType.h"
-				>
-			</File>
-			<File
-				RelativePath=".\include\resolver.h"
 				>
 			</File>
 			<File
