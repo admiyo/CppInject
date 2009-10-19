@@ -21,8 +21,7 @@ class Zone
 {
  public:
 	Zone(const ZoneType* type);
-	// TODO: Reorder parameters
-	Zone(Zone * parent, const ZoneType* type);
+	Zone(const ZoneType* type, Zone * parent);
 	
 	virtual ~Zone();
 

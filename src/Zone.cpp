@@ -16,8 +16,8 @@ Zone::Zone(const ZoneType* type)
 {
 }
 
-Zone::Zone(Zone * parent, const ZoneType* type)
- : mParent(parent), mZoneType(type)
+Zone::Zone(const ZoneType* type, Zone * parent)
+ : mZoneType(type), mParent(parent)
 {
 }
 

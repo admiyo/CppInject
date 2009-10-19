@@ -11,9 +11,9 @@
 
  int main(){
    Zone globalZone(&GlobalZoneType::instance);
-   Zone session1(&globalZone, &ConcreteZoneType<Session>::instance);
-   Zone request1(&session1, &ConcreteZoneType<Request>::instance);
-   Zone request2(&session1, &ConcreteZoneType<Request>::instance);
+   Zone session1( &ConcreteZoneType<Session>::instance, &globalZone );
+   Zone request1( &ConcreteZoneType<Request>::instance, &session1 );
+   Zone request2( &ConcreteZoneType<Request>::instance, &session1 );
 
     std::cout << __FUNCTION__ << std::endl;
 
