@@ -9,7 +9,7 @@
 // TODO: Remove
 #include "Zone.h"
 
-namespace dependency
+namespace CppInject
 {
 
 template <class T>

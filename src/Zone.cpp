@@ -8,7 +8,7 @@
 #include "destroyer.h"
 #include "ZoneType.h"
 
-namespace dependency
+namespace CppInject
 {
 
 Zone::Zone(const ZoneType* type)

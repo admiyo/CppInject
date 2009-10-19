@@ -4,7 +4,7 @@
  #include <iostream>
 
  using namespace std;
- using namespace dependency;
+ using namespace CppInject;
 
 
  extern void register_all_bindings();

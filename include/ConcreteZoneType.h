@@ -8,7 +8,7 @@
 
 #include "ZoneType.h"
 
-namespace dependency
+namespace CppInject
 {
 
 template <class T>

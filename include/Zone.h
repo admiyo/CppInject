@@ -8,7 +8,7 @@
 
 #include <vector>
 
-namespace dependency
+namespace CppInject
 {
 
 class ZoneType;

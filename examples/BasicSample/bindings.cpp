@@ -1,7 +1,7 @@
 #include "resolver.h"
 #include "sample_classes.h"
 
-using namespace dependency;
+using namespace CppInject;
 
 A* create(Zone& zone){
   return new A();

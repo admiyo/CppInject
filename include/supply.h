@@ -15,7 +15,7 @@
 #include <map>
 #include <stdexcept>
 
-namespace dependency
+namespace CppInject
 {
 
 /**

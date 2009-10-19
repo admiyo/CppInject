@@ -2,7 +2,7 @@
 
 //void
 //dependency::destroyer::operator()(){};
-using namespace dependency;
+using namespace CppInject;
 
 const GlobalZoneType GlobalZoneType::instance;
 

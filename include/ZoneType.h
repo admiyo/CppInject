@@ -6,7 +6,7 @@
 #ifndef _CPPINJECT_ZONETYPE_H_
 #define _CPPINJECT_ZONETYPE_H_
 
-namespace dependency
+namespace CppInject
 {
 
 class ZoneType

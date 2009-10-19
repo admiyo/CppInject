@@ -6,7 +6,7 @@
 #ifndef _CPPINJECT_DESTROYER_H_
 #define _CPPINJECT_DESTROYER_H_
 
-namespace dependency
+namespace CppInject
 {
 
 /**
