@@ -42,16 +42,8 @@ public:
 	typedef T* (*factory)(Zone& f) ;
 	typedef void (*cleanup)(T*) ;
 
-	supply * next;
-
 	supply()
 	{
-		next= 0;
-	};
-	
-	supply(supply * next)
-	{
-		this->next = next;
 	}
 
 	virtual ~supply()
